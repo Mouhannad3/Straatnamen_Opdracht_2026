@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "StraatnamenUI": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
