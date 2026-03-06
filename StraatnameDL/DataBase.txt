@@ -1,0 +1,24 @@
+﻿create Database ProjectStraat
+create table Provincie(
+Id int identity (1,1) not null,
+/*TaalcodeProvincie nvarchar(10) not null,*/
+ProvincieNaam nvarchar(250) not null,
+constraint PK_Provincie primary key clustered(Id)
+);
+
+create table Gemeente(
+Id int identity(1,1) not null,
+/*TaalcodeGemeente*/
+GemeenteNaam nvarchar(250) not null,
+ProvincieId int not null,
+constraint PK_Gemeente primary key clustered(Id),
+constraint FK_Gemeente_Provincie foreign key (ProvincieId) references Provincie(Id)
+);
+
+create table Straat(
+Id int identity(1,1) not null,
+StraatNaam nvarchar(250) not null,
+GemeenteId int not null,
+constraint PK_Straat primary key  clustered (Id),
+constraint FK_Straat_Gemeente foreign key (GemeenteId) references Gemeente(Id)
+);
