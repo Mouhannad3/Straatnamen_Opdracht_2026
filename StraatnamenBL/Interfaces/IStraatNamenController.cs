@@ -8,5 +8,6 @@ namespace StraatnamenBL.Interfaces
 {
     public class IStraatNamenController
     {
+        
     }
 }
